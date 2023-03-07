@@ -1,0 +1,30 @@
+.search
+  opacity: .8
+  border: 1px solid transparent
+  width: 100%
+  padding: 0 1rem
+  border-radius: 12px
+  display: flex
+  align-items: center
+  transition: border .4s ease
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.09)
+  background: #F9F9F9
+
+  > span
+    margin-right: 5px
+    cursor: pointer
+    opacity: .65
+    transition: opacity .4s ease
+
+    &:hover
+      opacity: .9
+
+  > input
+    padding: .85rem 0
+    background: transparent
+    color: black
+    width: 100%
+
+    &::placeholder
+      color: black
+      padding: 0 0 0 5px
