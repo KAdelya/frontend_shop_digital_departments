@@ -2,7 +2,7 @@ import styles from './index.module.sass'
 import {Formik, Field, Form} from 'formik';
 import {useState} from "react";
 
-const SignUp = () => {
+const SignIn = () => {
     const [visible, setVisible] = useState(false);
 
     const handleRegistration = (email: string, password: string) => {
@@ -22,7 +22,7 @@ const SignUp = () => {
                   }) => (
                     <form onSubmit={handleSubmit}>
                         <section>
-                            <h1>Registration</h1>
+                            <h1>Sign In</h1>
                             <div>
                                 <div>
                                     <input
@@ -36,14 +36,8 @@ const SignUp = () => {
                                         name='password'
                                         type='password'/>
                                 </div>
-                                <div>
-                                    <input
-                                        placeholder='Repeat password'
-                                        name='repeat_password'
-                                        type='password'/>
-                                </div>
                             </div>
-                            <button type='submit'>Sign Up</button>
+                            <button type='submit'>Sign In</button>
                         </section>
                     </form>)}
             </Formik>
@@ -51,4 +45,4 @@ const SignUp = () => {
     );
 }
 
-export default SignUp
+export default SignIn
