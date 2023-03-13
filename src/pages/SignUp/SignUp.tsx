@@ -9,7 +9,7 @@ const SignUp = () => {
     };
 
     return (
-        <div>
+        <div className={styles.registration_page}>
             <Formik
                 initialValues={{
                     email: '',
@@ -18,32 +18,47 @@ const SignUp = () => {
                 }}
                 onSubmit={(values: { email: string; password: string; }) => handleRegistration(values.email, values.password)}>
                 {({
-                      handleSubmit
+                      values, errors, touched, handleChange, handleBlur, handleSubmit
                   }) => (
                     <form onSubmit={handleSubmit}>
-                        <section>
+                        <section className={styles.content}>
                             <h1>Registration</h1>
-                            <div>
-                                <div>
+                            <div className={styles.content__info}>
+                                <div className={styles.content__info__form}>
                                     <input
                                         placeholder='Email'
                                         name='email'
-                                        type='email'/>
+                                        type='email'
+                                        value={values.email}
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}/>
+                                    {touched.email && errors.email && <p>{errors.email}</p>}
                                 </div>
-                                <div>
+                                <div className={styles.content__info__form}>
                                     <input
                                         placeholder='Password'
                                         name='password'
-                                        type='password'/>
+                                        type='password'
+                                        value={values.password}
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}/>
+                                    {touched.password && errors.password && <p>{errors.password}</p>}
                                 </div>
-                                <div>
+                                <div className={styles.content__info__form}>
                                     <input
                                         placeholder='Repeat password'
                                         name='repeat_password'
-                                        type='password'/>
+                                        type='password'
+                                        value={values.repeat_password}
+                                        onChange={handleChange}
+                                        onBlur={handleBlur}/>
+                                    {touched.repeat_password && errors.repeat_password &&
+                                    <p>{errors.repeat_password}</p>}
                                 </div>
                             </div>
-                            <button type='submit'>Sign Up</button>
+                            <div className={styles.content__info__button}>
+                                <button type='submit'>Sign Up</button>
+                            </div>
                         </section>
                     </form>)}
             </Formik>
