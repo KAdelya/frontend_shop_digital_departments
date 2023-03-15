@@ -1,5 +1,6 @@
 import styles from './index.module.sass'
 import Search from "../ui/Search/Search";
+import {NavLink} from "react-router-dom";
 
 const Header = () => {
     return (
@@ -11,10 +12,16 @@ const Header = () => {
                 <div className={styles.header__search}><Search/></div>
                 <ul>
                     <li>
-                        <span className="material-icons-outlined">person</span>
+                        <NavLink
+                            to="/profile">
+                            <span className="material-icons-outlined">person</span>
+                        </NavLink>
                     </li>
                     <li>
-                        <span className="material-icons-outlined">shopping_basket</span>
+                        <NavLink
+                            to="/basket">
+                            <span className="material-icons-outlined">shopping_basket</span>
+                        </NavLink>
                     </li>
                 </ul>
             </div>
