@@ -1,0 +1,22 @@
+@import "variables.sass"
+
+@mixin active-button
+  background: $primary
+  border: 2px solid #46760A
+  border-radius: 12px
+  color: white
+  padding: 12px 16px
+  transition: all .4s ease
+  font-weight: bold
+  &:hover
+    transform: translateY(-5px)
+    transition: all .4s ease
+
+@mixin inactive-button
+  color: #A9A9A9
+  padding: 12px 16px
+  transition: all .4s ease
+  font-weight: bold
+  &:hover
+    transform: translateY(-5px)
+    transition: all .4s ease
