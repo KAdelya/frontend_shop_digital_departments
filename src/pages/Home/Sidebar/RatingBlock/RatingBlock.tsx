@@ -5,8 +5,8 @@ const RatingBlock = () => {
     return (
         <div>
             <h3>Rating</h3>
-            {arr.map(el =>
-                <RatingRow stars={el} key={el}/>)}
+            {arr.map((el, idx) =>
+                <RatingRow stars={el} key={idx}/>)}
         </div>
     )
 }

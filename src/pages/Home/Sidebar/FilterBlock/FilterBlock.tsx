@@ -11,7 +11,7 @@ const FilterBlock:FC<IFilterBlock> = ({placeholder, type}) => {
         <div className={styles.filters}>
             <h3>{placeholder}</h3>
             <ul>{arr.map(el =>
-                <li>
+                <li key={el}>
                     {type === 'checkbox' && <input type="checkbox"/>}
                     {placeholder}
                 </li>
