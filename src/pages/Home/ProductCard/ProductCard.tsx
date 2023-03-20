@@ -1,6 +1,7 @@
 import styles from './index.module.sass'
 import {useState} from "react";
-import {redirect, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
+import product from '../../../assets/images/product.jpg'
 
 const ProductCard = () => {
     const [visible, setVisible] = useState(false)
@@ -8,6 +9,7 @@ const ProductCard = () => {
     return (
         <div className={styles.product}>
             <div className={styles.product__back}>
+                <img src={product}/>
                 <button onClick={() => setVisible(!visible)}>
                     <span className="material-icons-outlined">{visible ? "favorite" : "favorite_border"}</span>
                 </button>

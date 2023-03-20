@@ -1,14 +1,16 @@
 import styles from './index.module.sass'
 import avatar from '../../../assets/images/avatar.jpg'
 import {NavLink} from "react-router-dom";
+import Search from "../../../components/ui/Search/Search";
 
 const ProfileHeader = () => {
     return (
         <header className={styles.header}>
             <div className={styles.header__wrap}>
                 <h2 className={styles.header__logo}>
-                    ExampleNameShop
+                    DigitalShop
                 </h2>
+                <div className={styles.header__search}><Search/></div>
                 <ul>
                     <li>
                         <NavLink
@@ -22,8 +24,6 @@ const ProfileHeader = () => {
                             <h4>Last Orders</h4>
                         </NavLink>
                     </li>
-                </ul>
-                <ul>
                     <li>
                         <NavLink
                             to="/basket">

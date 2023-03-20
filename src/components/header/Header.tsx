@@ -7,7 +7,7 @@ const Header = () => {
         <header className={styles.header}>
             <div className={styles.header__wrap}>
                 <h2 className={styles.header__logo}>
-                    ExampleNameShop
+                    DigitalShop
                 </h2>
                 <div className={styles.header__search}><Search/></div>
                 <ul>

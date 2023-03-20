@@ -15,12 +15,21 @@
 
   &__back
     position: absolute
-    background: #F9F9F9
     border-radius: 12px
     width: 87%
     height: 60%
+    justify-content: center
+    display: flex
+
+    > img
+      position: absolute
+      width: 80%
+
     > button
       width: 100%
+      position: absolute
+      top: 0
+
       > span
         position: absolute
         right: 0
@@ -32,9 +41,11 @@
     justify-content: space-between
     align-items: center
     margin-top: 5px
+
     > button
       @include active-button
       padding: 8px 12px
+
       &:hover
         transform: none
 
