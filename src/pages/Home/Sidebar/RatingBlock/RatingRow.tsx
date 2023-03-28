@@ -16,4 +16,4 @@ const RatingRow: FC<{ stars: number }> = ({stars}) => {
     )
 }
 
-export default RatingRow
+export default RatingRow;

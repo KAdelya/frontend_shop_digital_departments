@@ -17,4 +17,4 @@ const HomeLayout: FC<PropsWithChildren> = ({children}) => {
     )
 }
 
-export default HomeLayout
+export default HomeLayout;

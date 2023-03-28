@@ -11,4 +11,4 @@ const AuthProvider: FC<any> = ({children}) => {
     return children
 }
 
-export default AuthProvider
+export default AuthProvider;

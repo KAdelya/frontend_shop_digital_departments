@@ -11,4 +11,4 @@ const RatingBlock = () => {
     )
 }
 
-export default RatingBlock
+export default RatingBlock;

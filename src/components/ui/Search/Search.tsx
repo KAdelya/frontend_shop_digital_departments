@@ -23,4 +23,4 @@ const Search: FC<any> = ({onChange, value}) => {
     )
 }
 
-export default Search
+export default Search;

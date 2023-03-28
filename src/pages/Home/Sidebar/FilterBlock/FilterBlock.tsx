@@ -21,4 +21,4 @@ const FilterBlock:FC<IFilterBlock> = ({placeholder, type}) => {
     )
 }
 
-export default FilterBlock
+export default FilterBlock;

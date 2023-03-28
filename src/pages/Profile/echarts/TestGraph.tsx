@@ -75,4 +75,4 @@ const TestGraph = () => {
     )
 }
 
-export default TestGraph
+export default TestGraph;
