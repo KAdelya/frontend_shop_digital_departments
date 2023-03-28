@@ -1,21 +1,24 @@
 import styles from './index.module.sass'
-import {ChangeEvent, FC, useState} from "react";
+import {ChangeEvent, FC, Key, useState} from "react";
+import ProductCard from "../../../pages/Home/ProductCard/ProductCard";
+import HomeLayout from "../../../pages/Home/HomeLayout";
 
-const Search: FC<any> = () => {
-    const [searchValue, setSearchValue] = useState('')
-
-    const searchHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        const value = e.target.value
-        setSearchValue(value)
-    }
-
+const Search: FC<any> = ({onChange, value}) => {
     return (
-        <div className={styles.search}>
-            <input type='text'
-                   onChange={searchHandler}
-                   value={searchValue}
-                   placeholder='Search Products, categories ...'/>
-            <span className='material-icons-outlined'>search</span>
+        <div>
+            <header className={styles.header}>
+                <div className={styles.header__wrap}>
+                    <div className={styles.header__search}>
+                        <div className={styles.search}>
+                            <input type='text'
+                                   onChange={onChange}
+                                   value={value}
+                                   placeholder='Search Products, categories ...'/>
+                            <span className='material-icons-outlined'>search</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
         </div>
     )
 }

@@ -1,6 +1,7 @@
-import styles from './index.module.sass'
+import styles from './index.module.sass';
 import Search from "../ui/Search/Search";
 import {NavLink} from "react-router-dom";
+
 
 const Header = () => {
     return (
@@ -9,7 +10,7 @@ const Header = () => {
                 <h2 className={styles.header__logo}>
                     DigitalShop
                 </h2>
-                <div className={styles.header__search}><Search/></div>
+                {/*<div className={styles.header__search}><Search/></div>*/}
                 <ul>
                     <li>
                         <NavLink
@@ -29,4 +30,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default Header;

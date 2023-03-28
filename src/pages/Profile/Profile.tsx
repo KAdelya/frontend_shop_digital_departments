@@ -8,7 +8,7 @@ import TestGraph from "./echarts/TestGraph";
 import TestBarChacrt from "./echarts/BarChart";
 import Footer from "../../components/footer/Footer";
 
-const Prodile = () => {
+const Profile = () => {
     const data = [
         {
             name: 'Page A',
@@ -96,4 +96,4 @@ const Prodile = () => {
     )
 }
 
-export default Prodile
+export default Profile;

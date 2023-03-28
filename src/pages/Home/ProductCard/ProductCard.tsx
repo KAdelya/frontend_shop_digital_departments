@@ -3,7 +3,9 @@ import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import product from '../../../assets/images/product.jpg'
 
-const ProductCard = () => {
+// @ts-ignore
+const ProductCard = ({title}) => {
+
     const [visible, setVisible] = useState(false)
     const navigate = useNavigate()
     return (
@@ -15,7 +17,7 @@ const ProductCard = () => {
                 </button>
             </div>
             <aside className={styles.product__info}>
-                <h4>Product title</h4>
+                <h4>{title}</h4>
                 <label>Space for a small product description</label>
                 <div className={styles.product__bottom}>
                     <h3>36.99 USD</h3>
@@ -26,4 +28,4 @@ const ProductCard = () => {
     )
 }
 
-export default ProductCard
+export default ProductCard;
