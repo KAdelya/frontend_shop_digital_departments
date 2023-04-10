@@ -6,7 +6,7 @@ const RatingBlock = () => {
         <div>
             <h3>Rating</h3>
             {arr.map((el, idx) =>
-                <RatingRow stars={el} key={idx}/>)}
+                <RatingRow stars={el} key={idx} checkbox={true}/>)}
         </div>
     )
 }
