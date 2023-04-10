@@ -16,29 +16,12 @@ const Home = () => {
         return e.toString().toLowerCase().match(searchValue);
     });
     return (
-        <div>
-            <Search onChange={searchHandler} value={searchValue}/>
-            {/*<header className={styles.header}>*/}
-            {/*    <div className={styles.header__wrap}>*/}
-            {/*        <div className={styles.header__search}>*/}
-            {/*            <div className={styles.search}>*/}
-            {/*                <input type='text'*/}
-            {/*                       onChange={searchHandler}*/}
-            {/*                       value={searchValue}*/}
-            {/*                       placeholder='Search Products, categories ...'/>*/}
-            {/*                <span className='material-icons-outlined'>search</span>*/}
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
-            {/*</header>*/}
-
-            <HomeLayout>
-                <div className={styles.home}>
-                    {filter.map((card: Key | null | undefined) =>
-                        <ProductCard key={card} title={card}/>)}
-                </div>
-            </HomeLayout>
-        </div>
+        <HomeLayout onChange={searchHandler} value={searchValue}>
+            <div className={styles.home}>
+                {filter.map((card: Key | null | undefined) =>
+                    <ProductCard key={card} title={card}/>)}
+            </div>
+        </HomeLayout>
     )
 }
 

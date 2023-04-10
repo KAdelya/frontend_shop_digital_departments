@@ -1,16 +1,17 @@
 import styles from './index.module.sass';
 import Search from "../ui/Search/Search";
 import {NavLink} from "react-router-dom";
+import {FC} from "react";
 
 
-const Header = () => {
+const Header: FC<any> = ({onChange, value}) => {
     return (
         <header className={styles.header}>
             <div className={styles.header__wrap}>
                 <h2 className={styles.header__logo}>
                     DigitalShop
                 </h2>
-                {/*<div className={styles.header__search}><Search/></div>*/}
+                <div className={styles.header__search}><Search onChange={onChange} value={value}/></div>
                 <ul>
                     <li>
                         <NavLink

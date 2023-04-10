@@ -4,10 +4,10 @@ import Sidebar from "./Sidebar/Sidebar";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 
-const HomeLayout: FC<PropsWithChildren> = ({children}) => {
+const HomeLayout: FC<PropsWithChildren<any>> = ({children, onChange, value}) => {
     return (
         <div className={styles.layout}>
-            <Header/>
+            <Header onChange={onChange} value={value}/>
             <div className={styles.layout__bar}>
                 <Sidebar/>
                 {children}
