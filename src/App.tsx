@@ -6,6 +6,7 @@ import SignUp from "./pages/SignUp/SignUp";
 import SignIn from "./pages/SignIn/SignIn";
 import Basket from "./pages/Basket/Basket";
 import Profile from "./pages/Profile/Profile";
+import Product from "./pages/Product/Product";
 
 const App = () => {
     return (
@@ -17,6 +18,7 @@ const App = () => {
                     <Route path="/signin" element={<SignIn/>}/>
                     <Route path="/profile" element={<Profile/>}/>
                     <Route path="/basket" element={<Basket/>}/>
+                    <Route path="/product/:id" element={<Product/>}/>
                 </Routes>
             </div>
         </Router>

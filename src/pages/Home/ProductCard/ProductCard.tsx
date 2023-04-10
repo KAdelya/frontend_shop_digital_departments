@@ -1,10 +1,10 @@
 import styles from './index.module.sass'
-import {useState} from "react";
+import {FC, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import product from '../../../assets/images/product.jpg'
 
-// @ts-ignore
-const ProductCard = ({title}) => {
+
+const ProductCard:FC<any> = ({title}) => {
 
     const [visible, setVisible] = useState(false)
     const navigate = useNavigate()

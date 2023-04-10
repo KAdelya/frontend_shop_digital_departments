@@ -1,11 +1,16 @@
 @import "./src/assets/styles/mixins.sass"
 .profile
+  width: 100%
+  box-sizing: border-box
+
   &__cards
     margin: 1rem 0
     display: flex
     justify-content: space-between
+
     > img
       cursor: pointer
       @include transfrom-5
+
   > ul > li
     margin: 2rem 0
