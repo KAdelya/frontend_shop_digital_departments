@@ -1,6 +1,7 @@
 import styles from './index.module.sass'
 import {NavLink} from "react-router-dom";
 import avatar from "../../assets/images/avatar.jpg";
+import BasketIcon from "./BasketIcon/BasketIcon";
 
 const AuthorizedCard = () => {
     return (
@@ -18,9 +19,8 @@ const AuthorizedCard = () => {
                 </NavLink>
             </li>
             <li>
-                <NavLink
-                    to="/basket">
-                    <span className="material-icons-outlined">shopping_basket</span>
+                <NavLink to="/basket">
+                    <BasketIcon count={4}/>
                 </NavLink>
             </li>
             <li>
