@@ -18,10 +18,8 @@ const Home = () => {
     return (
         <HomeLayout onChange={searchHandler} value={searchValue}>
             <div className={styles.home}>
-                {filter.map((card: Key | null | undefined, idx) =>
-                    <NavLink to={'product/' + card}>
-                        <ProductCard key={idx} title={card}/>
-                    </NavLink>
+                {filter.map((card, idx) =>
+                    <ProductCard key={idx} id={card}/>
                 )}
             </div>
         </HomeLayout>
