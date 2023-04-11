@@ -5,7 +5,6 @@ import product from '../../../assets/images/product.jpg'
 
 
 const ProductCard: FC<{ id: number }> = ({id}) => {
-
     const [visible, setVisible] = useState(false)
     const navigate = useNavigate()
     return (

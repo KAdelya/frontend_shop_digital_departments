@@ -4,8 +4,10 @@ import defaultImg from '../../assets/images/product.jpg'
 import RatingRow from "../Home/Sidebar/RatingBlock/RatingRow";
 import ProductInfo from "./ProductInfo/ProductInfo";
 import PriceBlock from "./PriceBlock/PriceBlock";
+import {useState} from "react";
 
 const Product = () => {
+    const [visible, setVisible] = useState(false)
     return (
         <HomeLayout>
             <div className={styles.product}>
@@ -21,6 +23,13 @@ const Product = () => {
                         <ProductInfo brand="Apple" category="Telephone" sku="1" stock="In stock"/>
                         <div className={styles.product__price}>
                             <PriceBlock/>
+                        </div>
+                        <div className={styles.product__fav}>
+                            <button onClick={() => setVisible(!visible)}>
+                                <span
+                                    className="material-icons-outlined">{visible ? "favorite" : "favorite_border"}</span>
+                                <h3>Add to my basket</h3>
+                            </button>
                         </div>
                     </div>
 
