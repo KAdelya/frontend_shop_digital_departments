@@ -11,7 +11,7 @@ const HomeLayout: FC<PropsWithChildren<any>> = ({children, onChange, value}) => 
         <div className={styles.layout}>
             <Header onChange={onChange} value={value}/>
             <div className={styles.layout__bar}>
-                {!(location.pathname === '/profile') && <Sidebar/>}
+                {(location.pathname === '/') && <Sidebar/>}
                 {children}
             </div>
             <Footer/>

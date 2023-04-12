@@ -18,7 +18,9 @@ const Header: FC<any> = ({onChange, value}) => {
                         DigitalShop
                     </h2>
                 </NavLink>
-                <div className={styles.header__search}><Search onChange={onChange} value={value}/></div>
+                <div className={styles.header__search}>
+                    <Search onChange={onChange} value={value}/>
+                </div>
             </div>
             {isAuth ? <AuthorizedCard/> : <UnauthorizedCard/>}
         </header>
