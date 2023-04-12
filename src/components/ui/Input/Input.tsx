@@ -1,9 +1,7 @@
 import styles from './index.module.sass'
-import {ChangeEvent, FC, Key, useState} from "react";
-import ProductCard from "../../../pages/Home/ProductCard/ProductCard";
-import HomeLayout from "../../../pages/Home/HomeLayout";
+import {FC} from "react";
 
-const Search: FC<any> = ({onChange, value}) => {
+const Input: FC<any> = ({onChange, value, icon, placeholder, label}) => {
     return (
         <div>
             <header className={styles.header}>
@@ -13,8 +11,9 @@ const Search: FC<any> = ({onChange, value}) => {
                             <input type='text'
                                    onChange={onChange}
                                    value={value}
-                                   placeholder='Search Products, categories ...'/>
-                            <span className='material-icons-outlined'>search</span>
+                                   placeholder={placeholder}/>
+                            {icon && <span className='material-icons-outlined'>{icon}</span>}
+                            {label && <button>{label}</button>}
                         </div>
                     </div>
                 </div>
@@ -23,4 +22,4 @@ const Search: FC<any> = ({onChange, value}) => {
     )
 }
 
-export default Search;
+export default Input;

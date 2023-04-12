@@ -1,5 +1,5 @@
 import styles from './index.module.sass';
-import Search from "../ui/Search/Search";
+import Input from "../ui/Input/Input";
 import {FC} from "react";
 import {useSelector} from "react-redux";
 import {RootState} from "../../redux/store";
@@ -19,7 +19,10 @@ const Header: FC<any> = ({onChange, value}) => {
                     </h2>
                 </NavLink>
                 <div className={styles.header__search}>
-                    <Search onChange={onChange} value={value}/>
+                    <Input onChange={onChange}
+                           value={value}
+                           icon="search"
+                           placeholder="Search Products, categories"/>
                 </div>
             </div>
             {isAuth ? <AuthorizedCard/> : <UnauthorizedCard/>}
