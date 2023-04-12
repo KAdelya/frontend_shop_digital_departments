@@ -2,25 +2,28 @@ import styles from './index.module.sass'
 import {FC} from "react";
 
 interface ProductInfoProps {
-    sku: string,
-    category: string,
-    brand: string,
-    stock: 'In stock' | 'Not available'
+    sku?: string,
+    category?: string,
+    brand?: string,
+    stock?: 'In stock' | 'Not available'
 }
 
 const ProductInfo: FC<ProductInfoProps> = ({sku, category, brand, stock}) => {
     return (
         <aside className={styles.product}>
-            <ul>
-                <li>
-                    <span>SKU:</span>
-                    <label>{sku}</label>
-                </li>
-                <li>
-                    <span>Category:</span>
-                    <label>{category}</label>
-                </li>
-            </ul>
+            {sku && category &&
+                <ul>
+                    {sku &&
+                        <li>
+                            <span>SKU:</span>
+                            <label>{sku}</label>
+                        </li>}
+                    {category &&
+                        <li>
+                            <span>Category:</span>
+                            <label>{category}</label>
+                        </li>}
+                </ul>}
             <ul>
                 <li>
                     <span>Brand:</span>

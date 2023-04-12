@@ -15,7 +15,7 @@ const Product = () => {
                     <div className={styles.product__img}>
                         <img src={defaultImg}/>
                     </div>
-                    <div>
+                    <div className={styles.product__desc}>
                         <h1>iPhone 13 Pro MAX</h1>
                         <RatingRow stars={4} checkbox={false}/>
                         <p>У новой телефотокамеры фокусное расстояние 77 мм и трёхкратный оптический зум — идеальные

@@ -1,6 +1,7 @@
 import styles from './index.module.sass'
-import CountInput from "../CountInput/CountInput";
+import CountInput from "../../../components/ui/CountInput/CountInput";
 import {useNavigate} from "react-router-dom";
+import ProductInfo from "../ProductInfo/ProductInfo";
 
 const PriceBlock = () => {
     const navigate = useNavigate()
