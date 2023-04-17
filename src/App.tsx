@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import '../src/assets/styles/global.sass';
 import {Routes, BrowserRouter as Router, Route} from "react-router-dom";
 import Home from "./pages/Home/Home";
