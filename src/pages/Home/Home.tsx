@@ -9,14 +9,7 @@ const Home = () => {
     // const [state, setState] = useState('')
     // const options = {
     //     method: 'GET',
-    //     url: "http://127.0.0.1:8000/store",
-    //     mode: "no-cors",
-    //     withCredentials: false,
-    //     headers: {
-    //         "Access-Control-Allow-Origin": "*",
-    //         "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-    //         "Content-Type": "application/json"
-    //     }
+    //     url: "http://127.0.0.1:8000/store/",
     // }
     // axios(options)
     //     .then((response) => {
@@ -26,45 +19,71 @@ const Home = () => {
     //     .catch((error) => {
     //         console.log(error);
     //     });
-    const [ name, setName] = useState('')
-    const [ error, setError] = useState('')
 
-    useEffect(() => {
-        fetch('http://localhost:8000/store')
-            .then(response => {
-                if (response.ok) {
-                    return response.json()
-                } else {
-                    throw Error(`Something went wrong: code ${response.status}`)
-                }
-            })
-            .then(({data}) => {
-                console.log(data)
-                // setName(data)
-            })
-            .catch(error => {
-                console.log(error)
-                setError('Ошибка, подробности в консоли')
-            })
-    }, [])
+
     // const [ name, setName] = useState('')
     // const [ error, setError] = useState('')
-    // fetch("http://127.0.0.1:8000/store/1", {
-    //     mode: 'no-cors',
-    //     method: "GET",
-    //     headers: {
-    //         "Access-Control-Allow-Origin": "*",
-    //         "Content-Type": "application/json",
-    //     }
-    // })
-    //     .then((res) => {
-    //         return res.json();
-    //     })
-    //     .then((data) => {
-    //         console.log(data);
-    //     });
+    //
+    // useEffect(() => {
+    //     fetch('http://127.0.0.1:8000/store/')
+    //         .then(response => {
+    //             console.log(response)
+    //             if (response.ok) {
+    //                 var gfghj = response.json();
+    //                 console.log(JSON.stringify(gfghj))
+    //                 return gfghj
+    //             } else {
+    //                 throw Error(`Something went wrong: code ${response.status}`)
+    //             }
+    //         })
+    //         .then(({data}) => {
+    //             console.log(data)
+    //             // setName(data)
+    //         })
+    //         .catch(error => {
+    //             console.log(error)
+    //             setError('Ошибка, подробности в консоли')
+    //         })
+    // }, [])
 
-    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+
+    const [name, setName] = useState('')
+    const [error, setError] = useState('')
+    const [names, setNames] = useState(Object)
+    const [obje, setObject] = useState(Object)
+    fetch("http://127.0.0.1:8000/store/", {
+        method: "GET"
+    })
+        .then((res) => {
+            return res.json();
+        })
+        .then((data) => {
+            let obj: any = {};
+            var cdata = Object.keys(data);
+            for (let i = 0; i < cdata.length; i++) {
+                obj[i] = data[cdata[i]];
+            }
+            // setName(data);
+            setNames(cdata);
+            // setCountProduct(cdata.length);
+            // console.log(Object.keys(data).length)
+            setObject(obj);
+            console.log(obj);
+        });
+
+    const arr = []
+    const arr2: any[] = []
+    // while (names.length >= 0) {
+    //     arr.push(names.length++);
+    // }
+    // console.log(names.length)
+    for (let i = 0; i < names.length; i++) {
+        arr.push(names[i]);
+        arr2.push(obje[i][2]);
+    }
+    // for (let i = 0; i < names.length; i++) {
+    //     arr2.push(obje[i][2]);
+    // }
     const [searchValue, setSearchValue] = useState('')
 
     const searchHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -75,11 +94,11 @@ const Home = () => {
     });
     return (
         <HomeLayout onChange={searchHandler} value={searchValue}>
-            {/*{name}*/}
-            <div className={styles.home}>
+                <div className={styles.home}>
                 {filter.map((card, idx) =>
-                    <ProductCard key={idx} id={card}/>
-                )}
+                    arr2.map((card2) =>
+                    <ProductCard key={idx} id={card} cost={card2}/>
+                ))}
             </div>
         </HomeLayout>
     )

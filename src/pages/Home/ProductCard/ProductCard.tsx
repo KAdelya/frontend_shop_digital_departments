@@ -4,7 +4,7 @@ import {useNavigate} from "react-router-dom";
 import product from '../../../assets/images/product.jpg'
 
 
-const ProductCard: FC<{ id: number }> = ({id}) => {
+const ProductCard: FC<{ id: number , cost: number}> = ({id, cost}) => {
     const [visible, setVisible] = useState(false)
     const navigate = useNavigate()
     return (
@@ -19,7 +19,7 @@ const ProductCard: FC<{ id: number }> = ({id}) => {
                 <h4>{id}</h4>
                 <label>Space for a small product description</label>
                 <div className={styles.product__bottom}>
-                    <h3>36.99 USD</h3>
+                    <h3>{cost} USD</h3>
                     <button onClick={() => navigate('/basket')}>Buy now</button>
                 </div>
             </aside>
