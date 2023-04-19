@@ -78,9 +78,9 @@ const Home = () => {
     // }
     // console.log(names.length)
     for (let i = 0; i < names.length; i++) {
-        arr.push([names[i], obje[i][2]]);
+        arr.push([names[i], obje[i][2], obje[i][1]]);
+        // console.log(obje[i][3]);
     }
-    // console.log(obje);
     // for (let i = 0; i < names.length; i++) {
     //     arr2.push(obje[i][2]);
     // }
@@ -96,7 +96,7 @@ const Home = () => {
         <HomeLayout onChange={searchHandler} value={searchValue}>
                 <div className={styles.home}>
                 {filter.map((card, idx) =>
-                    <ProductCard key={idx} id={card[0]} cost={card[1]}/>
+                    <ProductCard key={idx} id={card[0]} cost={card[1]} path_to_image={card[2]}/>
                 )}
             </div>
         </HomeLayout>
