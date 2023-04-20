@@ -51,25 +51,27 @@ const Home = () => {
     const [error, setError] = useState('')
     const [names, setNames] = useState(Object)
     const [obje, setObject] = useState(Object)
-    fetch("http://127.0.0.1:8000/store/", {
-        method: "GET"
-    })
-        .then((res) => {
-            return res.json();
+    const fetchData = () => {
+        fetch("http://127.0.0.1:8000/store/", {
+            method: "GET"
         })
-        .then((data) => {
-            let obj: any = {};
-            var cdata = Object.keys(data);
-            for (let i = 0; i < cdata.length; i++) {
-                obj[i] = data[cdata[i]];
-            }
-            // setName(data);
-            setNames(cdata);
-            // setCountProduct(cdata.length);
-            // console.log(Object.keys(data).length)
-            setObject(obj);
-            // console.log(obj);
-        });
+            .then((res) => {
+                return res.json();
+            })
+            .then((data) => {
+                let obj: any = {};
+                var cdata = Object.keys(data);
+                for (let i = 0; i < cdata.length; i++) {
+                    obj[i] = data[cdata[i]];
+                }
+                // setName(data);
+                setNames(cdata);
+                // setCountProduct(cdata.length);
+                // console.log(Object.keys(data).length)
+                setObject(obj);
+                // console.log(obj);
+            });
+    }
 
     const arr = []
     const arr2: any[] = []
@@ -92,6 +94,10 @@ const Home = () => {
     const filter = arr.filter((e) => {
         return e.toString().toLowerCase().match(searchValue);
     });
+
+    useEffect(()=> {
+        fetchData()
+    }, [])
     return (
         <HomeLayout onChange={searchHandler} value={searchValue}>
                 <div className={styles.home}>

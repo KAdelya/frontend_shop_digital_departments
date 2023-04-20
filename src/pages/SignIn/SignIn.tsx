@@ -1,12 +1,24 @@
 import styles from './index.module.sass'
 import {Formik, Field, Form} from 'formik';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 const SignIn = () => {
     const [visible, setVisible] = useState(false);
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const handleRegistration = (email: string, password: string) => {
+        // fetch('http://127.0.0.1:8000/login', {
+        //     credentials: 'include',
+        //     method: 'POST',
+        //     headers: {'Content-Type': 'application/json'},
+        //     body: JSON.stringify({email: email, password: password})
+        // })
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         console.log(data)
+        //         setPass(data.password);
+        //         setEmail(data.email)
+        //     });
     };
 
     return (
@@ -32,7 +44,7 @@ const SignIn = () => {
                                         type='email'
                                         value={values.email}
                                         onChange={handleChange}
-                                        onBlur={handleBlur} />
+                                        onBlur={handleBlur}/>
                                     {touched.email && errors.email && <p>{errors.email}</p>}
                                     {/*{touched.email && !errors.email && setEmail(values.email)}*/}
                                 </div>

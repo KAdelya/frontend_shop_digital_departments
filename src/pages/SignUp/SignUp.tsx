@@ -4,8 +4,20 @@ import {useState} from "react";
 
 const SignUp = () => {
     const [visible, setVisible] = useState(false);
-
-    const handleRegistration = (email: string, password: string) => {
+    const [email, setEmail] = useState('');
+    const [pass, setPass] = useState('');
+    const handleRegistration = (email: string, password: string, repeat_password: string) => {
+        // fetch('http://localhost:8000/register/', {
+        //     method: 'POST',
+        //     headers: {'Content-Type': 'application/json'},
+        //     body: JSON.stringify({email: email, password: password, repeat_password: repeat_password})
+        // })
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         console.log(data)
+        //         // setPass(data.password);
+        //         // setEmail(data.email);
+        //     });
     };
 
     return (
@@ -16,7 +28,7 @@ const SignUp = () => {
                     password: '',
                     repeat_password: ''
                 }}
-                onSubmit={(values: { email: string; password: string; }) => handleRegistration(values.email, values.password)}>
+                onSubmit={(values: { email: string; password: string; repeat_password: string;}) => handleRegistration(values.email, values.password, values.repeat_password)}>
                 {({
                       values, errors, touched, handleChange, handleBlur, handleSubmit
                   }) => (
